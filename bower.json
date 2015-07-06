@@ -1,0 +1,41 @@
+{
+  "name": "inventive-admin-theme",
+  "version": "0.9.0",
+  "homepage": "https://github.com/speedovation/inventive-admin-theme",
+  "authors": [
+    "Yash <yash@speedovation.com>"
+  ],
+  "description": "The only stylus front-end framework for developing responsive, mobile first projects on the web",
+  "main": "dist/css/base.css",
+  "keywords": [
+    "responsive",
+    "frontend",
+    "framework",
+    "stylus",
+    "jade",
+    "coffeescript"
+  ],
+  "license": "Apache 2.0 License",
+  "devDependencies": {
+    "holderjs": "~2.8.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "slick.js": "~1.5.5",
+    "inventive" : "~0.9.7",
+    "inventive-font": "~1.2.0",
+    "metisMenu": "~2.0.2",
+    "datatables": "~1.10.4",
+    "datatables-plugins": "~1.0.1",
+    "datatables-responsive": "~1.0.3",
+    "flot": "~0.8.3",
+    "morrisjs": "~0.5.1"
+  }
+}
