@@ -56,7 +56,7 @@ nav.navbar.navbar-default.navbar-static-top(role="navigation", style="margin-bot
           a(href="#")
             div
               p
-                strong Task 1
+                strong Task 1 rr
                 span.pull-right.text-muted 40% Complete
               .progress.progress-striped.active
                 .progress-bar.progress-bar-success(role="progressbar", aria-valuenow="40", aria-valuemin="0", aria-valuemax="100", style="width: 40%")
@@ -168,91 +168,371 @@ nav.navbar.navbar-default.navbar-static-top(role="navigation", style="margin-bot
   
   .navbar-default.sidebar(role="navigation")
     .sidebar-nav.navbar-collapse
-      ul#side-menu.link-list
-        li.sidebar-search
-          .input-group.custom-search-form
-            input.form-control(type="text", placeholder="Search...")
-            span.input-group-btn
-              button.btn.btn-default(type="button")
-                i.fa.fa-search
-          // /input-group
-        li
-          a(href="index.html")
-            i.fa.fa-dashboard.fa-fw
-            | Dashboard
-        li
-          a(href="#")
-            i.fa.fa-bar-chart-o.fa-fw
-            | Charts
-            span.fa.arrow
-          ul.nav.nav-second-level
+      aside.sidebar
+        nav.sidebar-nav  
+          ul#side-menu.link-list
+            li#maintab-AdminDashboard.maintab.active(data-submenu="1")
+              a.title(href="index.php?controller=AdminDashboard&token=3f47fb7f1cd1a5e73b0c80529cdf1a19")
+                i.icon-AdminDashboard
+                Dashboard
+            li#maintab-AdminCatalog.maintab.has_submenu(data-submenu="9")
+              a.title(href="index.php?controller=AdminProducts&token=c49d16cf5f5aadec9a28219a437d4f5f")
+                i.icon-AdminCatalog
+                Catalog
+              ul.submenu(style="top: 0px;")
+                li#subtab-AdminProducts
+                  a(href="index.php?controller=AdminProducts&token=c49d16cf5f5aadec9a28219a437d4f5f")
+                    | Products
+                li#subtab-AdminCategories
+                  a(href="index.php?controller=AdminCategories&token=1e143762ac5527b2ee2d9c2deb36fdb6")
+                    | Categories
+                li#subtab-AdminTracking
+                  a(href="index.php?controller=AdminTracking&token=a6a5f334c8e17341121e9e31d4f358cd")
+                    | Monitoring
+                li#subtab-AdminAttributesGroups
+                  a(href="index.php?controller=AdminAttributesGroups&token=b3448e30bbd31bc74dfa6bdddf3f6ef1")
+                    | Product Attributes
+                li#subtab-AdminFeatures
+                  a(href="index.php?controller=AdminFeatures&token=4e7baccbafa96bd3290d6633abe7434b")
+                    | Product Features
+                li#subtab-AdminManufacturers
+                  a(href="index.php?controller=AdminManufacturers&token=42a7750fcc0913415110669152941439")
+                    | Manufacturers
+                li#subtab-AdminSuppliers
+                  a(href="index.php?controller=AdminSuppliers&token=7d1f43c87d9c42f032789d4786ff1b7f")
+                    | Suppliers
+                li#subtab-AdminTags
+                  a(href="index.php?controller=AdminTags&token=c2ef32fb3a59ac2b668420b7c381d7c4")
+                    | Tags
+                li#subtab-AdminAttachments
+                  a(href="index.php?controller=AdminAttachments&token=726db1582b04edf23f79b36f16a0502a")
+                    | Attachments
+            li#maintab-AdminParentOrders.maintab.has_submenu(data-submenu="10")
+              a.title(href="index.php?controller=AdminOrders&token=6738c4d21eafcf33f8dc37238e681a17")
+                i.icon-AdminParentOrders
+                Orders
+              ul.submenu.outOfBounds(style="top: -23px;")
+                li#subtab-AdminOrders
+                  a(href="index.php?controller=AdminOrders&token=6738c4d21eafcf33f8dc37238e681a17")
+                    | Orders
+                li#subtab-AdminInvoices
+                  a(href="index.php?controller=AdminInvoices&token=c37399fd8aa18ec8a5005be6f5cd6458")
+                    | Invoices
+                li#subtab-AdminReturn
+                  a(href="index.php?controller=AdminReturn&token=b10f43c087abae6ccf105541eb9b421c")
+                    | Merchandise Returns
+                li#subtab-AdminDeliverySlip
+                  a(href="index.php?controller=AdminDeliverySlip&token=2422a1eab293a69e605760f03ae16d28")
+                    | Delivery Slips
+                li#subtab-AdminSlip
+                  a(href="index.php?controller=AdminSlip&token=c7692020a5e2c943991840b08d0a6b2c")
+                    | Credit Slips
+                li#subtab-AdminStatuses
+                  a(href="index.php?controller=AdminStatuses&token=5e3b0baba68dc51ccdc18e099d8f9f01")
+                    | Statuses
+                li#subtab-AdminOrderMessage
+                  a(href="index.php?controller=AdminOrderMessage&token=7c034fc8773731cbbe27eb226f01f852")
+                    | Order Messages
+            li#maintab-AdminParentCustomer.maintab.has_submenu(data-submenu="11")
+              a.title(href="index.php?controller=AdminCustomers&token=df6348294e22c967b1e864a5fa8771a9")
+                i.icon-AdminParentCustomer
+                Customers
+              ul.submenu
+                li#subtab-AdminCustomers
+                  a(href="index.php?controller=AdminCustomers&token=df6348294e22c967b1e864a5fa8771a9")
+                    | Customers
+                li#subtab-AdminAddresses
+                  a(href="index.php?controller=AdminAddresses&token=64750836863920fb4841fbd67f96893a")
+                    | Addresses
+                li#subtab-AdminGroups
+                  a(href="index.php?controller=AdminGroups&token=097826320d7b06d30e7397f3947452cd")
+                    | Groups
+                li#subtab-AdminCarts
+                  a(href="index.php?controller=AdminCarts&token=7a956ac699bda8d5854e46f180b6c9ab")
+                    | Shopping Carts
+                li#subtab-AdminCustomerThreads
+                  a(href="index.php?controller=AdminCustomerThreads&token=3f38b280d992d88f4ab22afc64679784")
+                    | Customer Service
+                li#subtab-AdminContacts
+                  a(href="index.php?controller=AdminContacts&token=129fe15a74a18cc36cdaef70fac2bf44")
+                    | Contacts
+                li#subtab-AdminGenders
+                  a(href="index.php?controller=AdminGenders&token=bff0497c32fd3ccc0715021901c995a0")
+                    | Titles
+            li#maintab-AdminPriceRule.maintab.has_submenu(data-submenu="12")
+              a.title(href="index.php?controller=AdminCartRules&token=ab60b4de0c6f26b575a419e52e87916b")
+                i.icon-AdminPriceRule
+                Price Rules
+              ul.submenu
+                li#subtab-AdminCartRules
+                  a(href="index.php?controller=AdminCartRules&token=ab60b4de0c6f26b575a419e52e87916b")
+                    | Cart Rules
+                li#subtab-AdminSpecificPriceRule
+                  a(href="index.php?controller=AdminSpecificPriceRule&token=3d3f900b2e6bb2f21f5e7e4dd5d24cfa")
+                    | Catalog Price Rules
+                li#subtab-AdminMarketing
+                  a(href="index.php?controller=AdminMarketing&token=5b097c88b73b16612b0b79b9543d5702")
+                    | Marketing
+            li#maintab-AdminParentModules.maintab.has_submenu(data-submenu="13")
+              a.title(href="index.php?controller=AdminModules&token=9f73b5d3ab46d4ad3a61f638082b8d4c")
+                i.icon-AdminParentModules
+                Modules and Services
+              ul.submenu
+                li#subtab-AdminModules
+                  a(href="index.php?controller=AdminModules&token=9f73b5d3ab46d4ad3a61f638082b8d4c")
+                    | Modules and Services
+                li#subtab-AdminAddonsCatalog
+                  a(href="index.php?controller=AdminAddonsCatalog&token=90984e35d7f5ea964ff1b3a15b4b8aa9")
+                    | Modules &#38; Themes Catalog
+                li#subtab-AdminModulesPositions
+                  a(href="index.php?controller=AdminModulesPositions&token=de815a443668819f65e78735c32184e9")
+                    | Positions
+                li#subtab-AdminPayment
+                  a(href="index.php?controller=AdminPayment&token=829dfa9ab5c379dccb494e968b7f69d9")
+                    | Payment
+            li#maintab-AdminParentShipping.maintab.has_submenu(data-submenu="14")
+              a.title(href="index.php?controller=AdminCarriers&token=b14167a84d24bf0d4da57f6dee3be304")
+                i.icon-AdminParentShipping
+                Shipping
+              ul.submenu
+                li#subtab-AdminCarriers
+                  a(href="index.php?controller=AdminCarriers&token=b14167a84d24bf0d4da57f6dee3be304")
+                    | Carriers
+                li#subtab-AdminShipping
+                  a(href="index.php?controller=AdminShipping&token=2d957b47efffd03a8fa2e3f288e78024")
+                    | Preferences
+            li#maintab-AdminParentLocalization.maintab.has_submenu(data-submenu="15")
+              a.title(href="index.php?controller=AdminLocalization&token=f4aa06e702c8ffc412a1975842bd7d21")
+                i.icon-AdminParentLocalization
+                Localization
+              ul.submenu
+                li#subtab-AdminLocalization
+                  a(href="index.php?controller=AdminLocalization&token=f4aa06e702c8ffc412a1975842bd7d21")
+                    | Localization
+                li#subtab-AdminLanguages
+                  a(href="index.php?controller=AdminLanguages&token=55f2b8a3e4f689f694e03b8a51d0e385")
+                    | Languages
+                li#subtab-AdminZones
+                  a(href="index.php?controller=AdminZones&token=7f3861a5068058c5e626b3b11665965b")
+                    | Zones
+                li#subtab-AdminCountries
+                  a(href="index.php?controller=AdminCountries&token=3024f1ec1384d2d69fda7cfd4e4f45ae")
+                    | Countries
+                li#subtab-AdminStates
+                  a(href="index.php?controller=AdminStates&token=3e8de93266ffd405c38d0dcee7e8c110")
+                    | States
+                li#subtab-AdminCurrencies
+                  a(href="index.php?controller=AdminCurrencies&token=52d83047ca3d386a103de494652a5e0f")
+                    | Currencies
+                li#subtab-AdminTaxes
+                  a(href="index.php?controller=AdminTaxes&token=d6bbb747ae4994cb1b0c3249aab5b376")
+                    | Taxes
+                li#subtab-AdminTaxRulesGroup
+                  a(href="index.php?controller=AdminTaxRulesGroup&token=598e3a2e3da0591554a1777752986b18")
+                    | Tax Rules
+                li#subtab-AdminTranslations
+                  a(href="index.php?controller=AdminTranslations&token=de750355a9cc6d98a80f55d45850f7ed")
+                    | Translations
+            li#maintab-AdminParentPreferences.maintab.has_submenu(data-submenu="16")
+              a.title(href="index.php?controller=AdminPreferences&token=cbd55a6410291cfd2dc12f26eda3c53a")
+                i.icon-AdminParentPreferences
+                Preferences
+              ul.submenu
+                li#subtab-AdminPreferences
+                  a(href="index.php?controller=AdminPreferences&token=cbd55a6410291cfd2dc12f26eda3c53a")
+                    | General
+                li#subtab-AdminOrderPreferences
+                  a(href="index.php?controller=AdminOrderPreferences&token=023386fa5ef8164fbfe0bbbe0e0581c0")
+                    | Orders
+                li#subtab-AdminPPreferences
+                  a(href="index.php?controller=AdminPPreferences&token=65a50fc2a570f47a57ef55ccc91457c9")
+                    | Products
+                li#subtab-AdminCustomerPreferences
+                  a(href="index.php?controller=AdminCustomerPreferences&token=deecc18de44d5f11462100c8788e5c13")
+                    | Customers
+                li#subtab-AdminThemes
+                  a(href="index.php?controller=AdminThemes&token=a98071cbbd3a0f30e19dabd6d8614655")
+                    | Themes
+                li#subtab-AdminMeta
+                  a(href="index.php?controller=AdminMeta&token=ffaab42a12b2fcb419669e3162a8d527")
+                    | SEO &#38; URLs
+                li#subtab-AdminCmsContent
+                  a(href="index.php?controller=AdminCmsContent&token=019a3101288af4467f5e6f341dc5f0a1")
+                    | CMS
+                li#subtab-AdminImages
+                  a(href="index.php?controller=AdminImages&token=26ef78ebcf279b0d65362c3d15fa5b24")
+                    | Images
+                li#subtab-AdminStores
+                  a(href="index.php?controller=AdminStores&token=e85038d4bb48f6b4fcd613d9994081c8")
+                    | Store Contacts
+                li#subtab-AdminSearchConf
+                  a(href="index.php?controller=AdminSearchConf&token=5e6ceccf0cce76408577989610c6bebc")
+                    | Search
+                li#subtab-AdminMaintenance
+                  a(href="index.php?controller=AdminMaintenance&token=9736ee4a8ce20c923e92f0c7d18ce686")
+                    | Maintenance
+                li#subtab-AdminGeolocation
+                  a(href="index.php?controller=AdminGeolocation&token=0cf6d00e1324e5cd4d395149f7142426")
+                    | Geolocation
+            li#maintab-AdminTools.maintab.has_submenu(data-submenu="17")
+              a.title(href="index.php?controller=AdminInformation&token=0131e041ef0024172f0dcf6061e0cdf6")
+                i.icon-AdminTools
+                Advanced Parameters
+              ul.submenu
+                li#subtab-AdminInformation
+                  a(href="index.php?controller=AdminInformation&token=0131e041ef0024172f0dcf6061e0cdf6")
+                    | Configuration Information
+                li#subtab-AdminPerformance
+                  a(href="index.php?controller=AdminPerformance&token=4f93366d7c2d6c912c73c1bd21e69b8c")
+                    | Performance
+                li#subtab-AdminEmails
+                  a(href="index.php?controller=AdminEmails&token=533e2419f8b556bbb8bd39b47ce5e40a")
+                    | E-mail
+                li#subtab-AdminImport
+                  a(href="index.php?controller=AdminImport&token=b7451e880a5973271ea311f0dc4101a4")
+                    | CSV Import
+                li#subtab-AdminBackup
+                  a(href="index.php?controller=AdminBackup&token=6a4627d1d870f5a85df805c5cdf684a5")
+                    | DB Backup
+                li#subtab-AdminRequestSql
+                  a(href="index.php?controller=AdminRequestSql&token=ee6f6ee98903d6a32347d01e4f31a109")
+                    | SQL Manager
+                li#subtab-AdminLogs
+                  a(href="index.php?controller=AdminLogs&token=9cacd73a25403705e637e84851ee1aa2")
+                    | Logs
+                li#subtab-AdminWebservice
+                  a(href="index.php?controller=AdminWebservice&token=393a541a02d313d34e9b3e8f06c3bfc0")
+                    | Webservice
+            li#maintab-AdminAdmin.maintab.has_submenu(data-submenu="18")
+              a.title(href="index.php?controller=AdminAdminPreferences&token=aee22e344a5048ff0f493c0c9b86e8fa")
+                i.icon-AdminAdmin
+                Administration
+              ul.submenu
+                li#subtab-AdminAdminPreferences
+                  a(href="index.php?controller=AdminAdminPreferences&token=aee22e344a5048ff0f493c0c9b86e8fa")
+                    | Preferences
+                li#subtab-AdminQuickAccesses
+                  a(href="index.php?controller=AdminQuickAccesses&token=d6a0b8d3abd8705318ccd35e49944132")
+                    | Quick Access
+                li#subtab-AdminEmployees
+                  a(href="index.php?controller=AdminEmployees&token=f7b5fdb023e37be07ce68f4284ac407a")
+                    | Employees
+                li#subtab-AdminProfiles
+                  a(href="index.php?controller=AdminProfiles&token=302f7e1183df222835ca4cce662d6009")
+                    | Profiles
+                li#subtab-AdminAccess
+                  a(href="index.php?controller=AdminAccess&token=ddf4a0d953d6cb2ae0f6458ef7807795")
+                    | Permissions
+                li#subtab-AdminTabs
+                  a(href="index.php?controller=AdminTabs&token=233bd38284b7ab4283a66e3174677ed9")
+                    | Menus
+                li#subtab-AdminGamification
+                  a(href="index.php?controller=AdminGamification&token=f3d09115ad3061b7110f6167d68b6825")
+                    | Merchant Expertise
+            li#maintab-AdminParentStats.maintab.has_submenu(data-submenu="19")
+              a.title(href="index.php?controller=AdminStats&token=2a4def76c6943b7b49925e1c7476e82a")
+                i.icon-AdminParentStats
+                Stats
+              ul.submenu
+                li#subtab-AdminStats
+                  a(href="index.php?controller=AdminStats&token=2a4def76c6943b7b49925e1c7476e82a")
+                    | Stats
+                li#subtab-AdminSearchEngines
+                  a(href="index.php?controller=AdminSearchEngines&token=9ceb8aea75dc67b4be6466abbfc66507")
+                    | Search Engines
+                li#subtab-AdminReferrers
+                  a(href="index.php?controller=AdminReferrers&token=1d62ced51ae38f442d9be4ef397799e8")
+                    | Referrers
+          span.menu-collapse
+            i.icon-align-justify.icon-rotate-90
+  
+        
+        nav.sidebar-nav  
+          ul#side-menu1.link-list
+            li.sidebar-search
+              .input-group.custom-search-form
+                input.form-control(type="text", placeholder="Search...")
+                span.input-group-btn
+                  button.btn.btn-default(type="button")
+                    i.fa.fa-search
+              // /input-group
             li
-              a(href="flot.html") Flot Charts
-            li
-              a(href="morris.html") Morris.js Charts
-          // /.nav-second-level
-        li
-          a(href="tables.html")
-            i.fa.fa-table.fa-fw
-            | Tables
-        li
-          a(href="forms.html")
-            i.fa.fa-edit.fa-fw
-            | Forms
-        li
-          a(href="#")
-            i.fa.fa-wrench.fa-fw
-            | UI Elements
-            span.fa.arrow
-          ul.nav.nav-second-level
-            li
-              a(href="panels-wells.html") Panels and Wells
-            li
-              a(href="buttons.html") Buttons
-            li
-              a(href="notifications.html") Notifications
-            li
-              a(href="typography.html") Typography
-            li
-              a(href="icons.html")  Icons
-            li
-              a(href="grid.html") Grid
-          // /.nav-second-level
-        li
-          a(href="#")
-            i.fa.fa-sitemap.fa-fw
-            | Multi-Level Dropdown
-            span.fa.arrow
-          ul.nav.nav-second-level
-            li
-              a(href="#") Second Level Item
-            li
-              a(href="#") Second Level Item
+              a(href="index.html")
+                i.fa.fa-dashboard.fa-fw
+                | Dashboard
             li
               a(href="#")
-                | Third Level
-                span.fa.arrow
-              ul.nav.nav-third-level
+                i.fa.fa-bar-chart-o.fa-fw
+                | Charts 
+                i.i-chevron-circle-down
+              ul.nav.nav-second-level
                 li
-                  a(href="#") Third Level Item
+                  a(href="flot.html") Flot Charts
                 li
-                  a(href="#") Third Level Item
-                li
-                  a(href="#") Third Level Item
-                li
-                  a(href="#") Third Level Item
-              // /.nav-third-level
-          // /.nav-second-level
-        li
-          a(href="#")
-            i.fa.fa-files-o.fa-fw
-            | Sample Pages
-            span.fa.arrow
-          ul.nav.nav-second-level
+                  a(href="morris.html") Morris.js Charts
+              // /.nav-second-level
             li
-              a(href="blank.html") Blank Page
+              a(href="tables.html")
+                i.fa.fa-table.fa-fw
+                | Tables
             li
-              a(href="login.html") Login Page
+              a(href="forms.html")
+                i.fa.fa-edit.fa-fw
+                | Forms
+            li
+              a(href="#")
+                i.fa.fa-wrench.fa-fw
+                | UI Elements
+
+              ul.nav.nav-second-level
+                li
+                  a(href="panels-wells.html") Panels and Wells
+                li
+                  a(href="buttons.html") Buttons
+                li
+                  a(href="notifications.html") Notifications
+                li
+                  a(href="typography.html") Typography
+                li
+                  a(href="icons.html")  Icons
+                li
+                  a(href="grid.html") Grid
+              // /.nav-second-level
+            li
+              a(href="#")
+                i.fa.fa-sitemap.fa-fw
+                | Multi-Level 
+                i.i-chevron-circle-down
+              ul.nav.nav-second-level
+                li
+                  a(href="#") Second Level Item
+                li
+                  a(href="#") Second Level Item
+                li
+                  a(href="#")
+                    | Third Level 
+                    i.i-chevron-circle-down
+                  ul.nav.nav-third-level
+                    li
+                      a(href="#") Third Level Item
+                    li
+                      a(href="#") Third Level Item
+                    li
+                      a(href="#") Third Level Item
+                    li
+                      a(href="#") Third Level Item
+                  // /.nav-third-level
+              // /.nav-second-level
+            li
+              a(href="#")
+                i.fa.fa-files-o.fa-fw
+                | Sample Pages 
+                i.i-chevron-circle-down
+              ul.nav.nav-second-level
+                li
+                  a(href="blank.html") Blank Page
+                li
+                  a(href="login.html") Login Page
           // /.nav-second-level
     // /.sidebar-collapse
   // /.navbar-static-side

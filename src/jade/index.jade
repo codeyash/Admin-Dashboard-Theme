@@ -9,12 +9,13 @@ html(lang="en")
     title Admin Theme
 
     link(href="../css/vendors.css", rel="stylesheet")
-
     link(href="../css/admin.css", rel="stylesheet")
+    
+    script(src="https://www.google.com/jsapi")
+    script(src="../js/vendors.js")
+    script(src="../js/admin.js")
 
-    //- link(href="../bower_components/morrisjs/morris.css", rel="stylesheet")
-
-    link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css')
+    //- link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css')
     
     //- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     //- WARNING: Respond.js doesn't work if you view the page via file://
@@ -82,7 +83,7 @@ html(lang="en")
               .panel-heading
                 .row
                   .mobile-3
-                    i.fa.fa-support.fa-5x
+                    i.i-support.size-32
                   .mobile-9.text-right
                     .huge 13
                     div Support Tickets!
@@ -116,14 +117,11 @@ html(lang="en")
                         a(href="#") Separated link
               // /.panel-heading
               .panel-body
-                #morris-area-chart
+                include _linechart
               // /.panel-body
             // /.panel
             .panel.panel-box
                 
-                .row
-                  .large-4
-                    .table-responsive
                       table.table.bordered.hover.zebra.rounded
                         thead
                           tr
@@ -172,15 +170,8 @@ html(lang="en")
                             td 10/21/2013
                             td 2:13 PM
                             td $943.45
-                    // /.table-responsive
-                  // /.large-4 (nested)
-                  .large-8
-                    #morris-bar-chart Chart
+                
                     
-                  // /.large-8 (nested)
-                // /.row
-              // /.panel-body
-            // /.panel
             .panel.panel-default
               .panel-heading
                 i.fa.fa-clock-o.fa-fw
@@ -436,22 +427,3 @@ html(lang="en")
       // /#page-wrapper
     // /#wrapper
     // jQuery
-    
-    
-    
-    script(src="../js/vendors.js")
-    
-    // Morris Charts JavaScript
-    script(src="../bower_components/raphael/raphael-min.js")
-    script(src="../bower_components/morrisjs/morris.min.js")
-    script(src="../js/morris-data.js")
-    // Custom Theme JavaScript
-    script(src="../dist/js/sb-admin-2.js")
-
-    script().
-      $(function() {
-        
-        //$(".flexnav").flexNav();
-        $("#side-menu").metisMenu();
-        
-      });

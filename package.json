@@ -1,5 +1,5 @@
 {
-  "name": "inventive",
+  "name": "inventive-admin-theme",
   "devDependencies": {
     "autoprefixer-stylus": "~0.7.0",
     "gulp": "~3.9.0",
@@ -19,9 +19,10 @@
     "browser-sync": "~2.7.13",
     "gulp-minify-css": "~1.2.0",
     "gulp-util": "*",
-    "gulp-plumber": "*"
+    "gulp-plumber": "*",
+    "gulp-bump": "~0.3.1"
   },
-  "description": "[![](https://img.shields.io/badge/GitterChat-Online-brightgreen.svg?style=flat-square)](https://gitter.im/speedovation/General) [![](https://img.shields.io/badge/HipChat-Online-brightgreen.svg?style=flat-square)](https://www.hipchat.com/ggaNhaRfU) [![]( http://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)]( http://opensource.org/licenses/Apache-2.0) [![](https://img.shields.io/badge/Alpha-Release-E44B23.svg?style=flat-square)](http://speedovation.com) [![](https://img.shields.io/badge/Laravel-5-brightgreen.svg?style=flat-square)](http://speedovation.org)",
+  "description": "Admin theme for inventive responsive framework",
   "version": "0.9.0",
   "main": "gulpfile.js",
   "directories": {
@@ -33,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/speedovation/admin-dashboard-theme.git"
+    "url": "git://github.com/speedovation/inventive-admin-theme.git"
   },
   "keywords": [
     "responsive",
@@ -46,6 +47,6 @@
   "author": "Yash <yash@speedovation.com>",
   "license": "Apache 2.0 License",
   "bugs": {
-    "url": "https://github.com/speedovation/admin-dashboard-theme/issues"
+    "url": "https://github.com/speedovation/inventive-admin-theme/issues"
   }
 }

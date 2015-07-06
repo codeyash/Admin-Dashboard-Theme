@@ -69,16 +69,8 @@ gulp.task('jade', function () {
             '!./src/jade/**/_*.jade'
         ], { base: 'src/jade' }
         )
-        .pipe(cached('build'))
-        .pipe(plumber(
-        {
-            errorHandler: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }
-        
-        ))
+        //.pipe(cached('build'))
+        .pipe(plumber(swallowError))
         //.pipe(filter)
         .pipe(jade({pretty:true}))
         //.pipe(filter.restore())
@@ -90,43 +82,21 @@ gulp.task('jade', function () {
 
 
 gulp.task('coffee', function () {
-   gulp.src(
-        [   
-            './src/coffeescript/*.coffee',
-            '!./src/coffeescript/_*.coffee',
-            '!./src/coffeescript/doc.coffee',
-            
-        ], { base: 'src/coffeescript' }
+   
+   gulp.src([   
+            './src/coffee/*.coffee',
+            '!./src/coffee/_*.coffee',
+        ], { base: 'src/coffee' }
         )
-            //.pipe(cached('build'))
-            //.pipe(filter)
-            .pipe(plumber(
-            {
-                errorHandler: function (err) {
-                    console.log(err);
-                    this.emit('end');
-                }
-            }
-            
-            ))
+            .pipe(plumber(swallowError))
             .pipe(coffee().on('error', swallowError))
-            //.pipe(filter.restore())
-            .pipe(concat('inventive.js'))
+            //.pipe(concat('admin.js'))
             .pipe(gulp.dest('./build/js'))
 /*            .pipe(browserSync.stream())*/
             ;
             
    
-   gulp.src(
-        [   
-            './src/coffeescript/*.coffee',
-            '!./src/coffeescript/_*.coffee'
-        ], { base: 'src/coffeescript' }
-        )
-            .pipe(coffee({bare: true}).on('error', swallowError))
-            .pipe(gulp.dest('./build/js/components'))
-            .pipe(browserSync.stream())
-            ;
+  
 
     
             
@@ -139,7 +109,11 @@ gulp.task('vendors', function () {
         [   
             "bower_components/jquery/dist/jquery.js",
             'bower_components/inventive/dist/js/inventive.js',
-            'bower_components/metisMenu/src/metisMenu.js'
+            'bower_components/metisMenu/src/metisMenu.js',
+            'bower_components/chartkick/chartkick.js',
+            'bower_components/datatables/media/js/jquery.dataTables.js',
+            'bower_components/datatables-responsive/js/dataTables.responsive.js'
+            
            
         ]
         )
@@ -161,7 +135,9 @@ gulp.task('vendors', function () {
             
             'bower_components/inventive/dist/css/inventive.css',
             'bower_components/inventive-font/css/stripe.css',
-            'bower_components/metisMenu/src/metisMenu.css'
+            'bower_components/metisMenu/src/metisMenu.css',
+            'bower_components/datatables-responsive/css/dataTables.responsive.css',
+            'bower_components/datatables/media/css/jquery.dataTables.css'
 
         ]
         )
@@ -194,7 +170,7 @@ gulp.task('watch', function() {
     
   gulp.watch('src/stylus/**/*.styl', ['stylus']);
   gulp.watch('src/jade/**/*.jade', ['jade']);
-  gulp.watch('src/coffeescript/*.coffee', ['coffee']);
+  gulp.watch('src/coffee/*.coffee', ['coffee']);
   
 });
 

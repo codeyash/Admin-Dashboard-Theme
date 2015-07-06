@@ -2,4 +2,37 @@ body
   font-family: 'PT Sans', sans-serif
 
 .row
-  max-width: 100%;
+  max-width: 100%
+
+//Metis Menus needs
+.collapsing
+    height: 0
+    overflow: hidden
+    position: relative
+    transition-duration: 0.30s
+    transition-property: height, visibility
+    transition-timing-function: ease
+
+
+.fade 
+  opacity: 0;
+  transition: opacity .12s linear
+  &.in
+    opacity: 1;
+  
+
+
+.collapse 
+  display: none;
+
+  &.in
+    display: block; 
+  
+  tr&.in
+    display: table-row; 
+  
+  tbody&.in
+    display: table-row-group; 
+
+
+
